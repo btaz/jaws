@@ -1,0 +1,19 @@
+# Ignore Gradle files
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+
+# Ignore NPM/Yarn files
+node_modules/
+yarn.lock
+
+# Ignore work directions and dynamic files
+build/
+src/main/resources/static/built/
+src/main/resources/static/main.css
+src/main/resources/static/main.css.map
+
+# Ignore IDE files
+.idea/
+
