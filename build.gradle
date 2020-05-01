@@ -1,0 +1,40 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.0.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    ext {
+        jacksonCore = '2.10.2'
+        jacksonDatabind = '2.10.2'
+        springBoot = '2.2.4.RELEASE'
+        testng = '7.1.0'
+        assertj = '3.15.0'
+        mockito = '3.2.4'
+    }
+    implementation "com.fasterxml.jackson.core:jackson-core:$jacksonCore"
+    implementation "com.fasterxml.jackson.core:jackson-databind:$jacksonDatabind"
+    implementation "org.springframework.boot:spring-boot-starter-web:$springBoot"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf:$springBoot"
+    implementation "org.springframework.boot:spring-boot-devtools:$springBoot"
+    implementation "org.springframework.boot:spring-boot-starter-websocket:$springBoot"
+    testImplementation "org.testng:testng:$testng"
+    testImplementation "org.assertj:assertj-core:$assertj"
+    testImplementation "org.mockito:mockito-core:$mockito"
+    testImplementation("org.springframework.boot:spring-boot-starter-test:$springBoot") {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
